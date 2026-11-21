@@ -2,7 +2,7 @@
 
 A job-search pipeline for senior roles, run by an AI agent under written rules.
 
-**Version 1.01, 2026-11-21**
+**Version 1.02, 2026-11-21**
 
 ## Description
 
@@ -221,23 +221,34 @@ figure moves a Go to Stretch. It never drops a role.
 
 ## External services
 
-| Service | Step | Used for | What it receives | In the full pipeline | Called by the code in this version |
+Two levels are shown. **Necessary** is the least the agent needs to run the process from feed to decision. **Best
+performance** is everything the pipeline uses when it runs at full quality.
+
+| Service | Step | Used for | What it receives | Necessary | Best performance |
 |---|---|---|---|---|---|
-| JEV by TypeSafe | 3 | Fit scoring: probabilities for typed questions | The profile without identity, and the facts and text of the posting | Required | Yes |
-| Jina Reader | 2 | Turns the page of a posting, or a page of an employer's careers site, into text | The link of the page | Required: every captured posting goes through it | No, the collectors are not published |
-| Tavily | 2 | Finds the employer's own posting for a role that was found on a job board | Search terms: the company name and the title | One search for each Go or Stretch role found on a job board | No, the collectors are not published |
-| Exa | 3 | Research on an employer for a role already marked Go or Stretch | Company and role names and, for a single role, the name of a person in a public role there. Never lists of people | Used by the agent when needed | No |
-| Perplexity | 6 | Briefing on an employer before a conversation | Company and role names | Planned, not used so far | No |
-| Apify | 2 | Fallback for a job board that cannot be read plainly. Public postings only | The link of a public posting | Not used so far | No |
-| Claude Code by Anthropic | all | The agent that runs the steps under the control document | The files of the workspace it works on | Required for the steps without a script | No, the scripts run without it |
-| Microsoft Word | 4 | PDF export of the built CV. A local program | Nothing leaves the machine | Used for every CV | No |
+| Claude Code by Anthropic | all | The agent that runs the steps under the control document | The files of the workspace it works on | Yes | Yes |
+| JEV by TypeSafe | 3 | Fit scoring: probabilities for typed questions | The profile without identity, and the facts and text of the posting | Yes | Yes |
+| Jina Reader | 2 | Turns the page of a posting, or a page of an employer's careers site, into text | The link of the page | Yes | Yes |
+| Tavily | 2 | Finds the employer's own posting for a role that was found on a job board, so that the original is read and scored as well | Search terms: the company name and the title | No | Yes |
+| Exa | 3 | Research on an employer for a role already marked Go or Stretch | Company and role names and, for a single role, the name of a person in a public role there. Never lists of people | No | Yes |
+| Perplexity | 6 | Briefing on an employer before a conversation | Company and role names | No | Yes. Planned, not used so far |
+| Apify | 2 | Fallback for a job board that cannot be read plainly. Public postings only | The link of a public posting | No | Only as a fallback. Not used so far |
 
-The last column says what you need to run the code published here. The column before it says what the pipeline
-uses when all seven steps run.
+What the necessary three give: without Claude Code there is no agent, without Jina Reader postings on employer
+sites cannot be captured, and without JEV there are hard filters but no fit score.
 
-The scripts read `JEV_API_KEY`, `JINA_API_KEY` and `TAVILY_API_KEY` from `.env`. Exa and Perplexity are called by
-the agent. Calls to the reader and the search service are counted per day, and the scorer's usage is recorded
-with each decision, so the monthly cost can be checked against a budget.
+What the others add: without Tavily a role found on a job board is scored from the board's copy only. Without Exa,
+research on an employer rests on plain web search. Without the search key the run goes on and skips that step.
+
+The code published in this version calls only JEV. Jina Reader and Tavily are called by the collectors, which are
+not published yet, and Exa and Perplexity are called by the agent. The scripts read `JEV_API_KEY`, `JINA_API_KEY`
+and `TAVILY_API_KEY` from `.env`.
+
+One local program is used as well: Microsoft Word exports the built CV to PDF. Nothing leaves the machine, and any
+program that turns a Word file into a PDF will do.
+
+Calls to the reader and the search service are counted per day, and the scorer's usage is recorded with each
+decision, so the monthly cost can be checked against a budget.
 
 ## Rules built into the code
 
@@ -278,6 +289,12 @@ Not in the repository:
 
 Numbering: the second decimal changes for fixes (1.01), the first decimal for new parts (1.10), and the number
 before the point for a change in how decisions are made (2.00).
+
+### 1.02, 2026-11-21
+
+The table of external services now has the columns "Necessary" and "Best performance". Necessary are Claude
+Code, JEV and Jina Reader; the other services add quality and the pipeline runs without them. Microsoft Word is
+described below the table, because it is a local program and not an external service. No published code changed.
 
 ### 1.01, 2026-11-21
 
