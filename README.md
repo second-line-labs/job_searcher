@@ -2,7 +2,7 @@
 
 A job-search pipeline for senior roles, run by an AI agent under written rules.
 
-**Version 1.00, 2026-11-21**
+**Version 1.01, 2026-11-21**
 
 ## Description
 
@@ -12,7 +12,7 @@ security and operational resilience. The field is set in settings files, so it c
 
 The agent prepares; the person decides and sends. No script applies for a job or sends a message.
 
-Version 1.00 publishes the decision layer and the CV builder:
+This version publishes the decision layer and the CV builder:
 
 - the title check, the intake step, the hard filters, the fit scoring, the bands and the decision record
 - the pay estimate and the "already seen" index
@@ -41,7 +41,7 @@ agent/profile_jev.example.md    ->  agent/profile_jev.md
 
 The real names are listed in `.gitignore`, so your own values are not committed by accident.
 
-The only key that version 1.00 needs is `JEV_API_KEY`, and only for scoring. Without a key, the title check, the
+The only key that the code in this version needs is `JEV_API_KEY`, and only for scoring. Without a key, the title check, the
 intake step, the hard filters, the dry run and the CV builder all work.
 
 A quick check that the setup is complete:
@@ -57,7 +57,7 @@ python agent/scripts/build_cv_format.py --content examples/cv_content.example.js
 The search runs in seven steps. Step 0 runs all the time, step 1 is built once and then kept current, and steps 2
 to 6 run for each role.
 
-| Step | Name | What happens | Who does it | Code in 1.00 |
+| Step | Name | What happens | Who does it | Code in this version |
 |---|---|---|---|---|
 | 0 | Positioning and network | Public writing in the field, a list of target employers, a map of contacts | The agent researches and drafts; the person publishes and makes contact | none |
 | 1 | Profile | One profile with every preference marked hard or soft, and a copy without identity for the scorer | The person answers; the agent compiles | example files |
@@ -91,11 +91,11 @@ No script. The result is three files.
   rules, which are checked locally and never sent).
 - **Stays with you:** every answer. The agent records facts and does not invent them.
 
-In version 1.00 you start from the example files copied during setup and edit them by hand.
+In this version you start from the example files copied during setup and edit them by hand.
 
 ### Step 2: Feed
 
-The collectors are not published in 1.00. Save a posting by hand instead:
+The collectors are not published in this version. Save a posting by hand instead:
 
 1. Copy `examples/inbox_item.example.md` to `agent/inbox/<date>_<company>_<title>.md`.
 2. Fill in the facts at the top, set `status: live` and paste the text of the posting below.
@@ -157,7 +157,7 @@ The rest of the step has no script.
 
 ### Step 5: Monitoring and learning
 
-No script in 1.00.
+No script in this version.
 
 - **You ask** for a review of the pipeline.
 - **You get** an updated tracker, the stage at which roles are being lost, and proposals for the profile and the
@@ -221,19 +221,23 @@ figure moves a Go to Stretch. It never drops a role.
 
 ## External services
 
-| Service | Step | Used for | What it receives | Key | Needed by 1.00 |
+| Service | Step | Used for | What it receives | In the full pipeline | Called by the code in this version |
 |---|---|---|---|---|---|
-| JEV by TypeSafe | 3 | Fit scoring: probabilities for typed questions | The profile without identity, and the facts and text of the posting | `JEV_API_KEY` | Yes, for scoring |
-| Jina Reader | 2 | Turns the page of a posting into text | The link of the posting | `JINA_API_KEY` | No |
-| Tavily | 2 | Optional search engine for the job-board title scan | Search terms: titles and places | `TAVILY_API_KEY` | No |
-| Exa | 3 | Research on an employer for a role already marked Go or Stretch | Company and role names and, for a single role, the name of a person in a public role there. Never lists of people | used by the agent | No |
-| Perplexity | 6 | Briefing on an employer before a conversation. Planned | Company and role names | used by the agent | No |
-| Apify | 2 | Fallback for a job board that cannot be read plainly. Public postings only. Not used so far | The link of a public posting | none in the code | No |
-| Claude Code by Anthropic | all | The agent that runs the steps under the control document | The files of the workspace it works on | account sign-in | No, the scripts run without it |
-| Microsoft Word | 4 | PDF export of the built CV. A local program | Nothing leaves the machine | none | No |
+| JEV by TypeSafe | 3 | Fit scoring: probabilities for typed questions | The profile without identity, and the facts and text of the posting | Required | Yes |
+| Jina Reader | 2 | Turns the page of a posting, or a page of an employer's careers site, into text | The link of the page | Required: every captured posting goes through it | No, the collectors are not published |
+| Tavily | 2 | Finds the employer's own posting for a role that was found on a job board | Search terms: the company name and the title | One search for each Go or Stretch role found on a job board | No, the collectors are not published |
+| Exa | 3 | Research on an employer for a role already marked Go or Stretch | Company and role names and, for a single role, the name of a person in a public role there. Never lists of people | Used by the agent when needed | No |
+| Perplexity | 6 | Briefing on an employer before a conversation | Company and role names | Planned, not used so far | No |
+| Apify | 2 | Fallback for a job board that cannot be read plainly. Public postings only | The link of a public posting | Not used so far | No |
+| Claude Code by Anthropic | all | The agent that runs the steps under the control document | The files of the workspace it works on | Required for the steps without a script | No, the scripts run without it |
+| Microsoft Word | 4 | PDF export of the built CV. A local program | Nothing leaves the machine | Used for every CV | No |
 
-Calls to the reader and the search service are counted per day, and the scorer's usage is recorded with each
-decision, so the monthly cost can be checked against a budget.
+The last column says what you need to run the code published here. The column before it says what the pipeline
+uses when all seven steps run.
+
+The scripts read `JEV_API_KEY`, `JINA_API_KEY` and `TAVILY_API_KEY` from `.env`. Exa and Perplexity are called by
+the agent. Calls to the reader and the search service are counted per day, and the scorer's usage is recorded
+with each decision, so the monthly cost can be checked against a budget.
 
 ## Rules built into the code
 
@@ -274,6 +278,12 @@ Not in the repository:
 
 Numbering: the second decimal changes for fixes (1.01), the first decimal for new parts (1.10), and the number
 before the point for a change in how decisions are made (2.00).
+
+### 1.01, 2026-11-21
+
+The table of external services is corrected. It now shows in two columns what the full pipeline uses and what
+the code published here calls. The table in 1.00 had one column, "Needed by 1.00", which could be read as if the
+reader and the search service were not in use. Both are in regular use in the full pipeline. No code changed.
 
 ### 1.00, 2026-11-21
 
