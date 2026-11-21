@@ -1,0 +1,26 @@
+# Keys
+.env
+
+# Your own settings and profile (the *.example.* files are the published versions)
+agent/constraints.json
+agent/feed_terms.json
+agent/employers.json
+agent/sources.json
+agent/project_sources.json
+agent/agency_sources.json
+agent/profile.md
+agent/profile_jev.md
+agent/cv_master.json
+
+# Captured postings, decisions, digests
+agent/inbox/
+agent/digests/
+
+# Personal documents
+*.xlsx
+*.docx
+*.pdf
+
+# Python
+__pycache__/
+*.pyc

@@ -1,0 +1,3 @@
+# Most scripts use the standard library only.
+python-docx    # build_cv_format.py
+openpyxl       # reading an application tracker workbook for the digest

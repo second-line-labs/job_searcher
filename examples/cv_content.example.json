@@ -1,0 +1,70 @@
+{
+  "notes": "Example content file with a fictional person. The structure is fixed in build_cv_format.py; this file holds wording only. **text** prints bold, [text] marks an open fact and prints highlighted.",
+  "name": "Alex Example",
+  "headline": "Head of IT Risk",
+  "proof_areas": "ICT Risk Frameworks | Regulatory Inspections | Third-Party and Cloud Risk",
+  "contact": {
+    "line": "Example City, Country | +00 000 0000000 | EU citizen",
+    "email": "alex.example@example.com",
+    "linkedin": "linkedin.com/in/example"
+  },
+  "summary": "Technology risk leader with twelve years in regulated financial institutions in the EU. Built the ICT risk management framework of a mid-size bank and led its side of a supervisory inspection of IT. Works in English and German.",
+  "highlights": [
+    "**Framework built:** ICT risk management framework for a mid-size bank, reported to the management board every quarter.",
+    "**Inspection led:** the bank's side of one supervisory inspection of IT; all findings closed within the agreed dates.",
+    "**Third parties assessed:** risk assessments for cloud providers set up across three locations.",
+    "**Team led:** a team of five in the second line of defense."
+  ],
+  "highlights_reserve": [
+    "**Controls tested:** control testing program for IT general controls across three locations."
+  ],
+  "competencies": [
+    "**Risk and Regulation:** ICT Risk Management, Regulatory Inspections, Risk Appetite and Tolerances, Board Reporting",
+    "**Third Parties and Cloud:** Outsourcing Risk, Cloud Risk Assessments, Contract Requirements, Exit Planning",
+    "**Controls and Assurance:** IT General Controls, Control Testing, Audit Findings, Issue Tracking"
+  ],
+  "experience": [
+    {
+      "company": "Example Bank AG, Example City",
+      "dates": "03/2021 – Present",
+      "title": "Head of IT Risk",
+      "scope": "Second line of defense for a mid-size bank under the national banking supervisor. Reports to the Chief Risk Officer. Team of five.",
+      "bullets": [
+        "Built the ICT risk management framework of the bank and reported on it to the management board every quarter.",
+        "Led the bank's side of one supervisory inspection of IT and closed all findings within the agreed dates.",
+        "Set the risk appetite and the tolerances for ICT risk together with the management board.",
+        "Ran the risk assessments of critical applications and of the bank's important outsourcing arrangements."
+      ]
+    },
+    {
+      "company": "International Bank, EU Subsidiary, Example City",
+      "dates": "06/2016 – 02/2021",
+      "title": "Senior Manager, Technology Risk",
+      "scope": "Technology risk function of the EU subsidiary of an international bank, three locations.",
+      "bullets": [
+        "Ran the control testing program for IT general controls across three locations.",
+        "Set up third-party risk assessments for cloud providers.",
+        "Tracked audit findings to closure and reported on them to the risk committee."
+      ]
+    }
+  ],
+  "earlier_career": [
+    {
+      "company": "Audit Firm, Example City",
+      "dates": "09/2013 – 05/2016",
+      "title": "IT Auditor",
+      "bullets": [
+        "Audited IT general controls at banks and insurers."
+      ]
+    }
+  ],
+  "education": [
+    "Master's degree in Information Systems, Example University, 2013"
+  ],
+  "certifications": [
+    "CISA, Certified Information Systems Auditor (2015)",
+    "ISO 27001 Lead Implementer (2018)"
+  ],
+  "training": "Training: Cloud Risk Management course (2023)",
+  "languages": "English (C2), German (C1)"
+}

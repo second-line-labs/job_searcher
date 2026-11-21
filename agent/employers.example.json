@@ -1,0 +1,505 @@
+{
+  "_example": "Example file. Copy it to employers.json and set your own values. Pay figures and minimum durations are 0 and dates are far in the past, which switches those rules off; they say nothing about the author's own terms.",
+  "note": "Employer lookup for the feed intake (feed fix plan, action 4; 2026-11-15). 'match' holds lower-case name fragments; the first entry whose fragment appears in the employer name wins, so put specific names before general ones. Sector and company type use the words of agent/profile.md 1.4, because the hard filters read them. Edit freely; unknown employers stay 'unknown'.",
+  "employers": [
+    {
+      "match": [
+        "deloitte",
+        "kpmg",
+        "pwc",
+        "pricewaterhouse",
+        "ernst & young",
+        "ernst and young",
+        "strategy&"
+      ],
+      "sector": "Big4",
+      "company_type": "consultancy"
+    },
+    {
+      "match": [
+        "tipico",
+        "bet365",
+        "entain",
+        "flutter",
+        "betway",
+        "pokerstars",
+        "bwin",
+        "novomatic",
+        "merkur gaming",
+        "gauselmann"
+      ],
+      "sector": "gambling",
+      "company_type": "corporate, in-house"
+    },
+    {
+      "match": [
+        "onetrust",
+        "servicenow",
+        "archer irm",
+        "metricstream",
+        "dotmatics",
+        "drata",
+        "vanta",
+        "secfix",
+        "crowdstrike",
+        "palo alto networks",
+        "zscaler",
+        "okta",
+        "splunk",
+        "wiz ",
+        "rapid7",
+        "tenable",
+        "sentinelone",
+        "kaspersky"
+      ],
+      "sector": "technology and cloud providers",
+      "company_type": "vendor or SaaS (GRC, security tooling)"
+    },
+    {
+      "match": [
+        "jcw",
+        "anderson wise",
+        "robert walters",
+        "michael page",
+        "page contracting",
+        "pagecontracting",
+        "hays",
+        "robert half",
+        "barclay simpson",
+        "morgan mckinley",
+        "selby jennings",
+        "fs talent",
+        "global fintech talent",
+        "careervalue",
+        "somi",
+        "liberty morgan",
+        "pragmatike",
+        "darwin recruitment",
+        "michael bailey",
+        "constaff",
+        "questax",
+        "westhouse",
+        "top itservices",
+        "it professionals ag",
+        "randstad",
+        "greysolutions",
+        "windhoff",
+        "synsero",
+        "c4-group",
+        "kommlink",
+        "brownian motion",
+        "liebich",
+        "systeme24",
+        "malt",
+        "freelance.de",
+        "catalant",
+        "remote choice",
+        "stanton chase",
+        "egon zehnder",
+        "spencer stuart",
+        "russell reynolds",
+        "korn ferry",
+        "heidrick"
+      ],
+      "sector": "unknown (agency advert)",
+      "company_type": "recruitment agency, client unknown"
+    },
+    {
+      "match": [
+        "public investment fund",
+        "mubadala",
+        "abu dhabi investment authority",
+        "adia",
+        "qatar investment authority",
+        "kuwait investment authority"
+      ],
+      "sector": "asset and wealth management",
+      "company_type": "sovereign fund, in-house"
+    },
+    {
+      "match": [
+        "abu dhabi global market",
+        "adgm",
+        "dubai international financial centre",
+        "difc",
+        "dfsa",
+        "saudi central bank",
+        "sama"
+      ],
+      "sector": "other public and supervisory bodies",
+      "company_type": "public body, permanent"
+    },
+    {
+      "match": [
+        "tadawul",
+        "abu dhabi securities exchange",
+        "dubai financial market"
+      ],
+      "sector": "market infrastructure",
+      "company_type": "regulated institution, in-house"
+    },
+    {
+      "match": [
+        "white and case",
+        "gleiss lutz",
+        "latham and watkins",
+        "a&o shearman",
+        "a o shearman"
+      ],
+      "sector": "law firms",
+      "company_type": "consultancy, client-facing or in-house function"
+    },
+    {
+      "match": [
+        "stada",
+        "fresenius medical care"
+      ],
+      "sector": "pharma and MedTech",
+      "company_type": "corporate, in-house"
+    },
+    {
+      "match": [
+        "unzer"
+      ],
+      "sector": "fintech and payments",
+      "company_type": "regulated institution, in-house"
+    },
+    {
+      "match": [
+        "zurich gruppe",
+        "r+v",
+        "r v versicherung"
+      ],
+      "sector": "insurance",
+      "company_type": "regulated institution, in-house"
+    },
+    {
+      "match": [
+        "universal investment",
+        "flossbach",
+        "scalable capital"
+      ],
+      "sector": "asset and wealth management",
+      "company_type": "regulated institution, in-house"
+    },
+    {
+      "match": [
+        "berenberg",
+        "lbbw",
+        "smbc",
+        "solaris",
+        "hauck aufhaeuser",
+        "hauck aufhäuser"
+      ],
+      "sector": "banking",
+      "company_type": "regulated institution, in-house"
+    },
+    {
+      "match": [
+        "360t",
+        "boerse stuttgart",
+        "börse stuttgart"
+      ],
+      "sector": "market infrastructure",
+      "company_type": "regulated institution, in-house"
+    },
+    {
+      "match": [
+        "siemens financial services",
+        "lufthansa airplus",
+        "airplus"
+      ],
+      "sector": "corporates with regulated finance arms",
+      "company_type": "regulated institution, in-house"
+    },
+    {
+      "match": [
+        "sap"
+      ],
+      "sector": "technology and cloud providers",
+      "company_type": "technology company, in-house"
+    },
+    {
+      "match": [
+        "european central bank",
+        "ecb"
+      ],
+      "sector": "European Central Bank",
+      "company_type": "public body, permanent"
+    },
+    {
+      "match": [
+        "bafin",
+        "bundesbank",
+        "european banking authority",
+        "esma",
+        "eiopa",
+        "single resolution board"
+      ],
+      "sector": "other public and supervisory bodies",
+      "company_type": "public body, permanent"
+    },
+    {
+      "match": [
+        "google",
+        "alphabet",
+        "microsoft",
+        "amazon",
+        "aws",
+        "meta",
+        "openai",
+        "anthropic",
+        "apple",
+        "nvidia",
+        "linkedin",
+        "waymo"
+      ],
+      "sector": "Big Tech",
+      "company_type": "Big Tech, in-house"
+    },
+    {
+      "match": [
+        "deutsche börse",
+        "deutsche boerse",
+        "clearstream",
+        "eurex",
+        "six group",
+        "six ",
+        "euronext",
+        "euroclear",
+        "lseg",
+        "london stock exchange"
+      ],
+      "sector": "market infrastructure",
+      "company_type": "regulated institution, in-house"
+    },
+    {
+      "match": [
+        "allianz global investors",
+        "allianzgi",
+        "franklin templeton",
+        "amundi",
+        "blackrock",
+        "pimco",
+        "dws",
+        "union investment",
+        "deka",
+        "pictet",
+        "lombard odier",
+        "vontobel",
+        "julius baer",
+        "julius bär",
+        "efg international",
+        "efg ",
+        "equatex",
+        "responsability",
+        "t. rowe",
+        "invesco",
+        "fidelity international",
+        "schroders",
+        "ubs asset"
+      ],
+      "sector": "asset and wealth management",
+      "company_type": "regulated institution, in-house"
+    },
+    {
+      "match": [
+        "ing ",
+        "ing-",
+        "ing deutschland",
+        "j.p. morgan",
+        "jpmorgan",
+        "jp morgan",
+        "goldman sachs",
+        "ubs",
+        "standard chartered",
+        "bnp paribas",
+        "mizuho",
+        "mufg",
+        "state street",
+        "bny",
+        "bank of new york",
+        "morgan stanley",
+        "nomura",
+        "bank of america",
+        "wells fargo",
+        "hsbc",
+        "citibank",
+        "citi",
+        "barclays",
+        "deutsche bank",
+        "commerzbank",
+        "dz bank",
+        "helaba",
+        "kfw",
+        "oddo bhf",
+        "societe generale",
+        "société générale",
+        "credit agricole",
+        "crédit agricole",
+        "santander",
+        "unicredit",
+        "aib",
+        "bank of ireland",
+        "bunq",
+        "n26",
+        "raiffeisen",
+        "erste",
+        "abn amro",
+        "rabobank",
+        "bank"
+      ],
+      "sector": "banking",
+      "company_type": "regulated institution, in-house"
+    },
+    {
+      "match": [
+        "allianz",
+        "solvd",
+        "swiss re",
+        "munich re",
+        "generali",
+        "zurich insurance",
+        "axa",
+        "talanx",
+        "hannover re",
+        "ergo",
+        "vhi",
+        "helvetia",
+        "baloise",
+        "insurance",
+        "versicherung"
+      ],
+      "sector": "insurance",
+      "company_type": "regulated institution, in-house"
+    },
+    {
+      "match": [
+        "paypal",
+        "visa",
+        "mastercard",
+        "zalando payments",
+        "adyen",
+        "stripe",
+        "klarna",
+        "wise ",
+        "revolut",
+        "worldline",
+        "nexi",
+        "noqoody",
+        "zen.com",
+        "paytm",
+        "bitstamp",
+        "robinhood",
+        "trade republic",
+        "tide ",
+        "payments"
+      ],
+      "sector": "fintech and payments",
+      "company_type": "regulated institution, in-house"
+    },
+    {
+      "match": [
+        "saudi aramco",
+        "aramco",
+        "adnoc",
+        "tennet",
+        "rwe",
+        "e.on",
+        "uniper",
+        "shell",
+        "bp ",
+        "totalenergies",
+        "hitachi energy",
+        "siemens energy",
+        "enbw",
+        "vattenfall"
+      ],
+      "sector": "oil and gas, energy",
+      "company_type": "corporate, in-house"
+    },
+    {
+      "match": [
+        "sanofi",
+        "biontech",
+        "johnson and johnson",
+        "johnson & johnson",
+        "j&j",
+        "fresenius",
+        "lonza",
+        "roche",
+        "novartis",
+        "bayer",
+        "merck",
+        "boehringer",
+        "heraeus medical",
+        "resilience care"
+      ],
+      "sector": "pharma and MedTech",
+      "company_type": "corporate, in-house"
+    },
+    {
+      "match": [
+        "clifford chance",
+        "freshfields",
+        "linklaters",
+        "hengeler",
+        "noerr",
+        "allen & overy",
+        "a&o shearman",
+        "white & case",
+        "latham",
+        "hogan lovells",
+        "cms "
+      ],
+      "sector": "law firms",
+      "company_type": "consultancy, client-facing or in-house function"
+    },
+    {
+      "match": [
+        "mckinsey",
+        "bcg",
+        "boston consulting",
+        "bain"
+      ],
+      "sector": "Big3 strategy consultancies",
+      "company_type": "consultancy, client-facing or in-house function"
+    },
+    {
+      "match": [
+        "accenture",
+        "capgemini",
+        "bearingpoint",
+        "kearney",
+        "oliver wyman",
+        "protiviti",
+        "sopra steria",
+        "deloitte"
+      ],
+      "sector": "other consultancies and professional services",
+      "company_type": "consultancy"
+    },
+    {
+      "match": [
+        "heraeus",
+        "ses",
+        "viessmann",
+        "symrise",
+        "liebherr",
+        "starbucks",
+        "shopify",
+        "loomis",
+        "f2f",
+        "fiege",
+        "legend trading",
+        "marex",
+        "naturefinance",
+        "a5 labs",
+        "swiss armed forces",
+        "schweizer armee"
+      ],
+      "sector": "everything else",
+      "company_type": "corporate, in-house"
+    }
+  ]
+}

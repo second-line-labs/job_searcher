@@ -1,0 +1,250 @@
+{
+  "_example": "Example file. Copy it to constraints.json and set your own values. Pay figures and minimum durations are 0 and dates are far in the past, which switches those rules off; they say nothing about the author's own terms.",
+  "version": "0.4",
+  "date": "2026-11-15",
+  "source": "agent/profile.md sections 1.3 to 1.5",
+  "location": {
+    "negative_countries": [
+      "XX",
+      "Example Country"
+    ],
+    "tier1_cities": [
+      "Frankfurt",
+      "Eschborn",
+      "Mainz",
+      "Wiesbaden",
+      "Darmstadt",
+      "Bad Homburg",
+      "Offenbach",
+      "Kronberg",
+      "Neu-Isenburg",
+      "Bad Vilbel",
+      "Hoechst",
+      "Höchst",
+      "Hanau",
+      "Dreieich",
+      "Oberursel"
+    ],
+    "tier1_remote": true,
+    "tier2_countries": [
+      "DE",
+      "Germany",
+      "Deutschland",
+      "CH",
+      "Switzerland",
+      "Schweiz",
+      "LU",
+      "Luxembourg",
+      "AT",
+      "Austria",
+      "Österreich",
+      "NL",
+      "Netherlands",
+      "Nederland",
+      "Munich",
+      "München",
+      "Muenchen",
+      "Unterföhring",
+      "Unterfoehring",
+      "Garching",
+      "Düsseldorf",
+      "Duesseldorf",
+      "Berlin",
+      "Hamburg",
+      "Cologne",
+      "Köln",
+      "Stuttgart",
+      "Karlsruhe",
+      "Hannover",
+      "Nuremberg",
+      "Zurich",
+      "Zürich",
+      "Geneva",
+      "Genève",
+      "Basel",
+      "Lausanne",
+      "Vienna",
+      "Wien",
+      "Amsterdam"
+    ],
+    "tier3_countries": [
+      "SA",
+      "Saudi Arabia",
+      "AE",
+      "UAE",
+      "United Arab Emirates",
+      "US",
+      "USA",
+      "United States",
+      "QA",
+      "Qatar",
+      "KW",
+      "Kuwait",
+      "BH",
+      "Bahrain",
+      "OM",
+      "Oman",
+      "Riyadh",
+      "Jeddah",
+      "Dhahran",
+      "Dubai",
+      "Abu Dhabi",
+      "Doha",
+      "Manama",
+      "Muscat",
+      "Kuwait City"
+    ],
+    "tier4_default": true,
+    "conditional_tier2": [
+      {
+        "places": [
+          "Dublin",
+          "Ireland",
+          "IE"
+        ],
+        "title_regex": "(head|director|chief|ciso|\bvp\b|vice president|executive director|managing director)",
+        "min_base_eur": 0,
+        "sectors": [
+          "Big Tech",
+          "banking",
+          "bank"
+        ],
+        "else_tier": "4"
+      }
+    ]
+  },
+  "sector_negative": [
+    "gambling",
+    "betting",
+    "casino"
+  ],
+  "company_type_negative": [
+    "example company type"
+  ],
+  "named_negative": [
+    "Example Former Employer",
+    "sanctioned"
+  ],
+  "compensation": {
+    "permanent_walkaway": {
+      "EUR": 0,
+      "CHF": 0,
+      "GBP": null
+    },
+    "tier3_min_total_eur_equiv": 0,
+    "project_day_rate_floor_eur": 0,
+    "project_min_months": 0
+  },
+  "authorization": {
+    "citizen": [
+      "DE",
+      "Germany",
+      "EU"
+    ],
+    "free_movement": [
+      "CH",
+      "Switzerland"
+    ],
+    "sponsorship_needed": [
+      "GB",
+      "UK",
+      "United Kingdom",
+      "SA",
+      "Saudi Arabia",
+      "AE",
+      "UAE",
+      "US",
+      "USA",
+      "United States",
+      "QA",
+      "Qatar",
+      "KW",
+      "Kuwait",
+      "BH",
+      "Bahrain",
+      "OM",
+      "Oman"
+    ]
+  },
+  "never_again_content": [
+    "example_content_tag"
+  ],
+  "feed_rules": {
+    "note": "Decided 2026-11-15 in the grilling of agent/feed_fix_plan.md. Read by the feed scripts once actions 7, 11, 12 and 15 are built.",
+    "weekly_decisions": {
+      "total": 15,
+      "gulf_us_max": 3,
+      "wide_max": 2,
+      "order": "priorities 1 and 2 first; Go before Stretch; then match"
+    },
+    "level": {
+      "always": "(head|director|chief|ciso|\\bvp\\b|vice president|executive director|managing director|leiter|leiterin|bereichsleit|abteilungsleit)",
+      "with_mandate": "(senior manager|\\blead\\b|officer|beauftragte)",
+      "never": "(\\bavp\\b|assistant vice president|associate|specialist|spezialist|referent)"
+    },
+    "tier3_rule": {
+      "title_regex": "(head|director|chief|ciso)",
+      "min_total_eur_equiv": 0,
+      "unpublished": "conditional Stretch",
+      "questions": [
+        "Is it a head-of-function seat with an entity-level mandate?",
+        "Does the total package reach the minimum set in this file?",
+        "Is the contract term acceptable?"
+      ]
+    },
+    "wide_lane": {
+      "places": "EU and EEA outside priorities 1 and 2, UK, rest of Switzerland",
+      "title_regex": "(head|director|chief|ciso)",
+      "min_match": 0.75,
+      "min_base_eur_equiv": 0,
+      "min_base_gbp": 0,
+      "unpublished": "Stretch with estimate"
+    },
+    "pay_estimate": {
+      "likely_below_walkaway": "Go becomes Stretch, ranked lower",
+      "published_below_walkaway": "drop"
+    },
+    "project": {
+      "earliest_start": "2000-01-01",
+      "unstated_rate_or_duration": "show with ask-the-agency",
+      "short_or_cheap": "count only"
+    },
+    "repeat_employer": {
+      "scope": "same legal entity",
+      "window_months": 12,
+      "after_rejection_hold_months": 6
+    },
+    "board_reading": {
+      "logged_out_only": true,
+      "max_pages_per_day": 200,
+      "capture_reserve": 40,
+      "boards": [
+        "linkedin.com",
+        "efinancialcareers.com",
+        "stepstone.de",
+        "jobs.ch",
+        "jobs.lu",
+        "karriere.at"
+      ],
+      "on_block": "stop and ask before Apify"
+    },
+    "budget_eur_per_month": 30,
+    "budget_warn_share": 0.8,
+    "cadence": "one run a day on request; weekly lanes on the first run of the week",
+    "fx_to_eur_rough": {
+      "note": "Rough rates, set by hand, not looked up. Used only to compare a published package in another currency with the minimum set in this file. A package near the line should be checked by hand.",
+      "EUR": 1.0,
+      "USD": 0.92,
+      "GBP": 1.17,
+      "CHF": 1.05,
+      "AED": 0.25,
+      "SAR": 0.245,
+      "QAR": 0.253,
+      "KWD": 3.0,
+      "BHD": 2.44,
+      "OMR": 2.39
+    },
+    "unit_prices_eur": {},
+    "unit_prices_note": "Empty until the user fills it from the plan pages of the services. Keys the digest reads: jev_input_per_million, jev_output_per_million, jina_per_read, tavily_per_search. Without them the digest reports usage counts and no EUR figure."
+  }
+}
